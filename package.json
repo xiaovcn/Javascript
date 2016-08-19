@@ -1,0 +1,33 @@
+{
+  "name": "notify",
+  "version": "1.0.0",
+  "description": "办公系统智能提醒软件",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . XiaovApp "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaovcn/notify.git"
+  },
+  "keywords": [
+    "Notify"
+  ],
+  "author": "xiaov.cn",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/xiaovcn/notify/issues"
+  },
+  "homepage": "https://github.com/xiaovcn/notify#readme",
+  "devDependencies": {
+    "devtron": "^1.3.0",
+    "electron-packager": "^7.6.0",
+    "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "electron": "^1.3.3",
+    "electron-json-storage": "^2.0.0"
+  }
+}
