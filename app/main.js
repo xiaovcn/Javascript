@@ -13,6 +13,10 @@ const nativeImage = electron.nativeImage
 let win
 let popwin
 
+
+
+
+
 app.on('ready', () => {
   //加载主窗口
   createWindow()
@@ -21,7 +25,6 @@ app.on('ready', () => {
   //加载弹出窗口
   createPopWindow()
 })
-
 
 //主窗口
 function createWindow() {
@@ -81,6 +84,8 @@ function createTray() {
   win.on('hide', () => {
     tray.setHighlightMode('never')
   })
+
+
 }
 
 //弹出窗口
@@ -90,15 +95,15 @@ function createPopWindow() {
   let screenSize = electron.screen.getPrimaryDisplay().workAreaSize
   
   popwin = new BrowserWindow({
-    x: screenSize.width - 300, y: screenSize.height - 86,
-    width: 300,
-    height: 100,    
-    frame: false,
+    //x: screenSize.width - 300, y: screenSize.height - 86,
+    //width: 300,
+    //height: 100,    
+    frame: true,
     icon: path.join(__dirname, '', 'assets/images/icon.png'),
     transparent: true,
     alwaysOnTop: true,
     movable: true,
-    skipTaskbar: true //不在任务栏显示
+    skipTaskbar: false //不在任务栏显示
   })
   popwin.loadURL(`file://${__dirname}/popwin.html`)
 }
