@@ -1,6 +1,6 @@
 const electron = require('electron')
 const app = electron.app
-//const fs = require('fs')
+const fs = require('fs')
 const path = require('path')
 const Tray = electron.Tray
 const Menu = electron.Menu
@@ -21,9 +21,9 @@ app.on('ready', () => {
   //加载主窗口
   createWindow()
   //任务栏
-  createTray()
+  //createTray()
   //加载弹出窗口
-  createPopWindow()
+  //createPopWindow()
 })
 
 //主窗口
@@ -31,8 +31,8 @@ function createWindow() {
 
   if (!win) {
     win = new BrowserWindow({ width: 980, height: 600, frame: true, resizable: true, icon: path.join(__dirname, '', 'assets/images/icon.png') })
-    //win.webContents.openDevTools()
-    win.loadURL(`file://${__dirname}/index.html`)
+    win.webContents.openDevTools()
+    win.loadURL(`file://${__dirname}/settings.html`)
     
     win.on('minimize', () => {
       win.hide()
